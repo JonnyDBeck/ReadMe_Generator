@@ -70,8 +70,30 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Created a function to initialize app
+function init() {
+    //Fun, Quirky Message
+    console.log("Let's create your README.md!");
+
+    //Questions Asked Below
+    inquirer
+        .prompt([
+            {type:'input', name:'username', message:questions[0]},
+            {type:'input', name:'email', message:questions[1]},
+            {type:'input', name:'title', message:questions[2]},
+            {type:'input', name:'description', message:questions[3]},
+            {type:'input', name:'installation', message:questions[4]},
+            {type:'input', name:'usage', message:questions[5]},
+            {type:'input', name:'contributers', message:questions[6]},
+            {type:'input', name:'tests', message:questions[7]},
+        ])
+        .then((answers) => {
+            console.log(answers);
+        })
+        .catch((err) => {
+            console.error(err);
+    });
+}
 
 // Function call to initialize app
 init();
