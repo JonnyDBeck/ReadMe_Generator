@@ -1,5 +1,6 @@
 // Included packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // Created an array of questions for user input
 const questions = [
@@ -13,19 +14,19 @@ const questions = [
     "Input Project Tests (Leave Blank If Unwanted): ",
     //Yes, I included all of these, momma didn't raise no underachiver
     "What is your Project license?\n" +
-        "[0] Apache 2.0\n" +
-        "[1] Boost Software 1.0\n" +
-        "[2] A BSD License (Further List)\n" +
-        "[3] A Creative Commons License (Further List)\n" +
-        "[4] Eclipse Public 1.0\n" +
-        "[5] A GNU License (Further List)\n" +
-        "[6] A Hippocratic License (Further List)\n" +
-        "[7] IBM Public 1.0\n" +
-        "[8] ISC\n" +
-        "[9] MIT\n" +
-        "[10] Mozilla Public 2.0\n" +
-        "[11] An Open Data Commons License (Further List)\n" +
-        "[12] A Perl License (Further List)\n" +
+        "[0] A BSD License (Further List)\n" +
+        "[1] A Creative Commons License (Further List)\n" +
+        "[2] A GNU License (Further List)\n" +
+        "[3] A Hippocratic License (Further List)\n" +
+        "[4] An Open Data Commons License (Further List)\n" +
+        "[5] A Perl License (Further List)\n" +
+        "[6] Apache 2.0\n" +
+        "[7] Boost Software 1.0\n" +
+        "[8] Eclipse Public 1.0\n" +
+        "[9] IBM Public 1.0\n" +
+        "[10] ISC\n" +
+        "[11] MIT\n" +
+        "[12] Mozilla Public 2.0\n" +
         "[13] SIL Open Font 1.1\n" +
         "[14] The Unlicense\n" +
         "[15] WTFPL\n" +
@@ -67,6 +68,35 @@ const questions = [
     // Momma should've raised an underachiver, it is currently 3:15 AM
 ];
 
+function getLicense() { return new Promise((resolve, reject) => {
+    // Questions for License
+    // I could've done a fancy list but I had alrady set up for this
+    // Plus, having the input be a number can let me do some wacky things with the array
+    inquirer.prompt({type:'number', name:'l', message:questions[8]})
+    .then((licenseBase) => {
+        if (licenseBase.l < 6){
+
+            //This one gets deeper into specific Liscenses
+            inquirer.prompt({type:'number', name:'l', message:questions[9 + licenseBase.l]})
+            .then((licenseFull) => {
+                //Returns array as [Liscense Group, Liscense]
+                resolve([licenseBase.l, licenseFull.l])
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+
+        }
+        else {
+            //Returns Specific Liscense
+            resolve([licenseBase.l, 0])
+        }
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+})}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
@@ -88,11 +118,19 @@ function init() {
             {type:'input', name:'tests', message:questions[7]},
         ])
         .then((answers) => {
-            console.log(answers);
+
+            const data = answers;
+
+            //gets the liscense
+            getLicense().then((liscense) => {
+                data.liscense = liscense;
+                console.log(data)
+            })
+
         })
         .catch((err) => {
             console.error(err);
-    });
+        });
 }
 
 // Function call to initialize app
