@@ -8,10 +8,6 @@ const licenseInfo = require('./licenseInfo')
 // ex: license badge = licenseInfo[data.license[0]][data.license[0]].badge
 
 // Function included Below were made to reduce bulk of return
-function createTOC (data){
-
-}
-
 function createSection (section, data){
   if (section === 'TOC'){
 
@@ -75,7 +71,7 @@ ${createSection("Tests", data.tests)}
 ${createSection("License", data.license)}
 ${createSection("Contact", [data.username, data.email])}
 -----------------------------------------------------
-This README was made with Jon Beck's README Generator
+This README was made with Jon Beck's README Generator  
 Repo: [JonnyDBeck's README Generator](https://github.com/JonnyDBeck/ReadMe_Generator)
 `;
 }
