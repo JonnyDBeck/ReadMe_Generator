@@ -1,6 +1,6 @@
 //Made It another file for formating
-const liscenseInfo = [
-    //BSD Liscenses
+const licenseInfo = [
+    //BSD Licenses
     [
         {
             Name: "The BSD 3-Clause License",
@@ -13,7 +13,7 @@ const liscenseInfo = [
             Link: "https://opensource.org/licenses/BSD-2-Clause"
         }
     ],
-    //CC Liscenses
+    //CC Licenses
     [
         {
             Name: "The CC0 License",
@@ -51,7 +51,7 @@ const liscenseInfo = [
             Link: "https://creativecommons.org/licenses/by-nc-nd/4.0/"
         }
     ],
-    //GNU Liscenses
+    //GNU Licenses
     [
         {
             Name: "The GNU GPL v3 License",
@@ -79,7 +79,7 @@ const liscenseInfo = [
             Link: "https://www.gnu.org/licenses/fdl-1.3"
         }
     ],
-    //Hippocratic Liscenses
+    //Hippocratic Licenses
     [
         {
             Name: "The Hippocratic License 2.1",
@@ -92,7 +92,7 @@ const liscenseInfo = [
             Link: "https://firstdonoharm.dev"
         }
     ],
-    //OPD Liscenses
+    //OPD Licenses
     [
         {
             Name: "The Attribution License (BY)",
@@ -110,7 +110,7 @@ const liscenseInfo = [
             Link: "https://opendatacommons.org/licenses/pddl/"
         }
     ],
-    //Perl Liscenses
+    //Perl Licenses
     [
         {
             Name: "The Perl License",
@@ -123,62 +123,64 @@ const liscenseInfo = [
             Link: "https://opensource.org/licenses/Artistic-2.0"
         }
     ],
-    //Non-Grouped Liscenses
-    {
-        Name: "The Apache 2.0 License",
-        Badge: "https://img.shields.io/badge/License-Apache_2.0-blue.svg",
-        Link: "https://opensource.org/licenses/Apache-2.0"
-    },
-    {
-        Name: "The Boost Software License 1.0",
-        Badge: "https://img.shields.io/badge/License-Boost_1.0-lightblue.svg",
-        Link: "https://www.boost.org/LICENSE_1_0.txt"
-    },
-    {
-        Name: "The Eclipse Public License 1.0",
-        Badge: "https://img.shields.io/badge/License-EPL_1.0-red.svg",
-        Link: "https://opensource.org/licenses/EPL-1.0"
-    },
-    {
-        Name: "The IBM Public License Version 1.0",
-        Badge: "https://img.shields.io/badge/License-IPL_1.0-blue.svg",
-        Link: "https://opensource.org/licenses/IPL-1.0"
-    },
-    {
-        Name: "The ISC License (ISC)",
-        Badge: "https://img.shields.io/badge/License-ISC-blue.svg",
-        Link: "https://opensource.org/licenses/ISC"
-    },
-    {
-        Name: "The MIT License",
-        Badge: "https://img.shields.io/badge/License-MIT-yellow.svg",
-        Link: "https://opensource.org/licenses/MIT"
-    },
-    {
-        Name: "The Mozilla Public License 2.0",
-        Badge: "https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg",
-        Link: "https://opensource.org/licenses/MPL-2.0"
-    },
-    {
-        Name: "The SIL Open Font License 1.1",
-        Badge: "https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg",
-        Link: "https://opensource.org/licenses/OFL-1.1"
-    },
-    {
-        Name: "The Unlicense",
-        Badge: "https://img.shields.io/badge/license-Unlicense-blue.svg",
-        Link: "http://unlicense.org/"
-    },
-    {
-        Name: "The Do What the Fuck You Want to Public License",
-        Badge: "https://img.shields.io/badge/License-WTFPL-brightgreen.svg",
-        Link: "http://www.wtfpl.net/about/"
-    },
-    {
-        Name: "The zlib/libpng License",
-        Badge: "https://img.shields.io/badge/License-Zlib-lightgrey.svg",
-        Link: "https://opensource.org/licenses/Zlib"
-    }
+    //Non-Grouped Licenses
+    [
+        {
+            Name: "The Apache 2.0 License",
+            Badge: "https://img.shields.io/badge/License-Apache_2.0-blue.svg",
+            Link: "https://opensource.org/licenses/Apache-2.0"
+        },
+        {
+            Name: "The Boost Software License 1.0",
+            Badge: "https://img.shields.io/badge/License-Boost_1.0-lightblue.svg",
+            Link: "https://www.boost.org/LICENSE_1_0.txt"
+        },
+        {
+            Name: "The Eclipse Public License 1.0",
+            Badge: "https://img.shields.io/badge/License-EPL_1.0-red.svg",
+            Link: "https://opensource.org/licenses/EPL-1.0"
+        },
+        {
+            Name: "The IBM Public License Version 1.0",
+            Badge: "https://img.shields.io/badge/License-IPL_1.0-blue.svg",
+            Link: "https://opensource.org/licenses/IPL-1.0"
+        },
+        {
+            Name: "The ISC License (ISC)",
+            Badge: "https://img.shields.io/badge/License-ISC-blue.svg",
+            Link: "https://opensource.org/licenses/ISC"
+        },
+        {
+            Name: "The MIT License",
+            Badge: "https://img.shields.io/badge/License-MIT-yellow.svg",
+            Link: "https://opensource.org/licenses/MIT"
+        },
+        {
+            Name: "The Mozilla Public License 2.0",
+            Badge: "https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg",
+            Link: "https://opensource.org/licenses/MPL-2.0"
+        },
+        {
+            Name: "The SIL Open Font License 1.1",
+            Badge: "https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg",
+            Link: "https://opensource.org/licenses/OFL-1.1"
+        },
+        {
+            Name: "The Unlicense",
+            Badge: "https://img.shields.io/badge/license-Unlicense-blue.svg",
+            Link: "http://unlicense.org/"
+        },
+        {
+            Name: "The Do What the Fuck You Want to Public License",
+            Badge: "https://img.shields.io/badge/License-WTFPL-brightgreen.svg",
+            Link: "http://www.wtfpl.net/about/"
+        },
+        {
+            Name: "The zlib/libpng License",
+            Badge: "https://img.shields.io/badge/License-Zlib-lightgrey.svg",
+            Link: "https://opensource.org/licenses/Zlib"
+        }
+    ]
   ]
 
-  module.exports = liscenseInfo;
+  module.exports = licenseInfo;

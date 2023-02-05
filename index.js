@@ -1,5 +1,6 @@
 // Included packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown')
 
 // Created an array of questions for user input
@@ -88,8 +89,8 @@ function getLicense() { return new Promise((resolve, reject) => {
 
         }
         else {
-            //Returns Specific Liscense
-            resolve([licenseBase.l, 0])
+            //Returns Specific Liscense in regards to the liscenseInfo file
+            resolve([6, licenseBase.l - 6])
         }
     })
     .catch((err) => {
@@ -97,8 +98,24 @@ function getLicense() { return new Promise((resolve, reject) => {
     });
 })}
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Created a function to write README file
+// Additionally I reformatted the function
+function createReadme(data) {
+
+    // Delete Old README if there is one
+    fs.unlink('README.md', function (err) {
+        console.log('Old README Deleted')
+    })
+
+
+
+    //Create New README
+    fs.appendFile('README.md', generateMarkdown(data), function (err) {
+        if (err) throw err;
+        console.log('New README Created');
+    })
+
+}
 
 // Created a function to initialize app
 function init() {
@@ -122,9 +139,9 @@ function init() {
             const data = answers;
 
             //gets the liscense
-            getLicense().then((liscense) => {
-                data.liscense = liscense;
-                console.log(data)
+            getLicense().then((license) => {
+                data.license = license;
+                createReadme(data);
             })
 
         })
